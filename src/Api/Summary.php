@@ -2,6 +2,8 @@
 
 namespace Ebay\Sell\Compliance\Api;
 
+use OpenAPI\Runtime\UnexpectedResponse;
+
 class Summary extends AbstractAPI
 {
     /**
@@ -30,9 +32,9 @@ class Summary extends AbstractAPI
      *                       MarketplaceIdEnum type definition. Note that Version 1.4.0 of the Compliance API
      *                       is only supported on the US, UK, Australia, Canada {English), and Germany sites.
      *
-     * @return mixed
+     * @return UnexpectedResponse
      */
-    public function getListingViolationsSummary(array $queries = [], array $headers = []): mixed
+    public function getListingViolationsSummary(array $queries = [], array $headers = []): UnexpectedResponse
     {
         return $this->request(
         'getListingViolationsSummary',

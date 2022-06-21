@@ -3,6 +3,7 @@
 namespace Ebay\Sell\Compliance\Api;
 
 use Ebay\Sell\Compliance\Model\SuppressViolationRequest;
+use OpenAPI\Runtime\UnexpectedResponse;
 
 class Violation extends AbstractAPI
 {
@@ -82,9 +83,9 @@ class Violation extends AbstractAPI
      *                       Compliance API is only supported on the US, UK, Australia, Canada {English), and
      *                       Germany sites.
      *
-     * @return mixed
+     * @return UnexpectedResponse
      */
-    public function gets(array $queries = [], array $headers = []): mixed
+    public function gets(array $queries = [], array $headers = []): UnexpectedResponse
     {
         return $this->request(
         'getListingViolations',
@@ -109,9 +110,9 @@ class Violation extends AbstractAPI
      * @param SuppressViolationRequest $Model this type is the base request type of the
      *                                        SuppressViolation method
      *
-     * @return mixed
+     * @return UnexpectedResponse
      */
-    public function suppressViolation(SuppressViolationRequest $Model): mixed
+    public function suppressViolation(SuppressViolationRequest $Model): UnexpectedResponse
     {
         return $this->request(
         'suppressViolation',
